@@ -21,7 +21,7 @@ import venom from'venom-bot';
     },
     // options
     {
-     
+      browserPathExecutable: '/usr/bin/google-chrome',
       folderNameToken: 'tokens', //folder name when saving tokens
       mkdirFolderToken: './Token', //folder directory tokens, just inside the venom folder, example:  { mkdirFolderToken: '/node_modules', } //will save the tokens folder in the node_modules directory
       headless: 'new', // you should no longer use boolean false or true, now use false, true or 'new' learn more https://developer.chrome.com/articles/new-headless/
