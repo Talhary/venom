@@ -29,7 +29,12 @@ import venom from'venom-bot';
       debug: false, // Opens a debug session
       logQR: true, // Logs QR automatically in terminal
       browserWS: '', // If u want to use browserWSEndpoint
-      browserArgs: [''], // Original parameters  ---Parameters to be added into the chrome browser instance
+      browserArgs:  [
+                '--disable-gpu',
+                '--disable-dev-shm-usage',
+                '--disable-setuid-sandbox',
+                '--no-sandbox'
+            ] , // Original parameters  ---Parameters to be added into the chrome browser instance
       addBrowserArgs: [''], // Add broserArgs without overwriting the project's original
       puppeteerOptions: {headless:true}, // Will be passed to puppeteer.launch
       disableSpins: true, // Will disable Spinnies animation, useful for containers (docker) for a better log
@@ -55,7 +60,7 @@ import venom from'venom-bot';
 
 function start(client) {
 
-   client.sendText('923320843832@c.us','Bot started') 
+  client.sendText('923320843832@c.us','Bot started') 
   client.onMessage((message) => {
     if (message.body === 'Hi' && message.isGroupMsg === false) {
       client
