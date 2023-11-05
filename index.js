@@ -21,7 +21,7 @@ import venom from'venom-bot';
     },
     // options
     {
-      browserPathExecutable: '/usr/bin/google-chrome',
+      browserPathExecutable: '/usr/bin/google-chrome-stable',
       folderNameToken: 'tokens', //folder name when saving tokens
       mkdirFolderToken: './Token', //folder directory tokens, just inside the venom folder, example:  { mkdirFolderToken: '/node_modules', } //will save the tokens folder in the node_modules directory
       headless: 'new', // you should no longer use boolean false or true, now use false, true or 'new' learn more https://developer.chrome.com/articles/new-headless/
@@ -35,7 +35,10 @@ import venom from'venom-bot';
                 '--disable-setuid-sandbox',
                 '--no-sandbox'
             ] , // Original parameters  ---Parameters to be added into the chrome browser instance
-      addBrowserArgs: [''], // Add broserArgs without overwriting the project's original
+      addBrowserArgs: ['--disable-gpu',
+                '--disable-dev-shm-usage',
+                '--disable-setuid-sandbox',
+                '--no-sandbox'], // Add broserArgs without overwriting the project's original
       puppeteerOptions: {headless:true}, // Will be passed to puppeteer.launch
       disableSpins: true, // Will disable Spinnies animation, useful for containers (docker) for a better log
       disableWelcome: true, // Will disable the welcoming message which appears in the beginning
