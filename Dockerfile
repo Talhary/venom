@@ -26,4 +26,4 @@ COPY . ${FUNCTION_DIR}
 RUN npm run build
 RUN ls ${FUNCTION_DIR}/node_modules
 RUN node node_modules/puppeteer/install.js
-CMD [ "/function/dist/api/generate.pdf" ]
+CMD ["node", "index.js"]
